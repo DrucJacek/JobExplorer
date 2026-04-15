@@ -2,17 +2,17 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>JobExplorer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobExplorer - Oferty Pracy</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
         <h1>JobExplorer</h1>
         <nav>
             <ul>
-                <li><a href="#" id="nav-list">Oferty pracy</a></li>
-                <li><a href="#" id="nav-form">Aplikuj (Formularz)</a></li>
+                <li><a href="index.html">Oferty pracy</a></li>
+                <li><a href="apply.html">Aplikuj (Formularz)</a></li>
             </ul>
         </nav>
     </header>
@@ -24,40 +24,47 @@
                 <input type="text" id="search" placeholder="Szukaj stanowiska...">
             </div>
             
-            <div class="grid-container" id="jobs-container">
+            <div class="grid-container">
                 <article class="card">
                     <h3>Frontend Developer</h3>
-                    <p>Firma: Tech Corp</p>
-                    <button class="btn-details">Szczegóły</button>
+                    <p><strong>Firma:</strong> Tech Corp</p>
+                    <p><strong>Lokalizacja:</strong> Warszawa (Hybrydowo)</p>
+                    <button onclick="window.location.href='details-frontend.html'">Szczegóły</button>
+                </article>
+
+                <article class="card">
+                    <h3>Backend Developer</h3>
+                    <p><strong>Firma:</strong> CodeHouse</p>
+                    <p><strong>Lokalizacja:</strong> Kraków (Zdalnie)</p>
+                    <button onclick="window.location.href='details-backend.html'">Szczegóły</button>
+                </article>
+
+                <article class="card">
+                    <h3>UX/UI Designer</h3>
+                    <p><strong>Firma:</strong> DesignerPro</p>
+                    <p><strong>Lokalizacja:</strong> Poznań (Stacjonarnie)</p>
+                    <button onclick="window.location.href='details-ux.html'">Szczegóły</button>
+                </article>
+
+                <article class="card">
+                    <h3>Tester Oprogramowania</h3>
+                    <p><strong>Firma:</strong> QA Solutions</p>
+                    <p><strong>Lokalizacja:</strong> Wrocław (Hybrydowo)</p>
+                    <button onclick="window.location.href='details-tester.html'">Szczegóły</button>
+                </article>
+
+                <article class="card">
+                    <h3>DevOps Engineer</h3>
+                    <p><strong>Firma:</strong> CloudNet</p>
+                    <p><strong>Lokalizacja:</strong> Cała Polska (100% Zdalnie)</p>
+                    <button onclick="window.location.href='details-devops.html'">Szczegóły</button>
                 </article>
             </div>
-        </section>
-
-        <section id="view-details" class="hidden">
-            <button id="btn-back">Powrót do listy</button>
-            <article id="job-details-content">
-                <h2>Szczegóły stanowiska</h2>
-                <p>Tutaj JavaScript załaduje pełny opis, wymagania itd.</p>
-            </article>
-        </section>
-
-        <section id="view-form" class="hidden">
-            <h2>Formularz aplikacyjny</h2>
-            <form id="apply-form" action="#" method="post">
-                <label for="name">Imię i nazwisko:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required> <label for="message">Wiadomość / Link do CV:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Wyślij aplikację</button>
-            </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; Projekt zespołowy PS - Technologie WWW</p>
+        <p>&copy; Projekt zespołowy PS - Wprowadzenie do WWW</p>
     </footer>
 </body>
 </html>

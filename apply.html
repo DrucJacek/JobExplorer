@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobExplorer - Aplikuj</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>JobExplorer</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Oferty pracy</a></li>
+                <li><a href="apply.html">Aplikuj (Formularz)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Formularz aplikacyjny</h2>
+            <p style="margin-bottom: 1rem;">Wypełnij poniższe dane, aby wysłać swoje zgłoszenie.</p>
+            
+            <form action="index.html" method="get">
+                <label for="name">Imię i nazwisko:</label>
+                <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
+                
+                <label for="email">Adres E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="jan@domena.pl" required> 
+                
+                <label for="message">Wiadomość / Link do CV (np. LinkedIn, GitHub):</label>
+                <textarea id="message" name="message" rows="5" placeholder="Napisz kilka słów o sobie..." required></textarea>
+
+                <button type="submit">Wyślij aplikację</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Projekt zespołowy PS - Wprowadzenie do WWW</p>
+    </footer>
+</body>
+</html>
