@@ -161,7 +161,7 @@ footer {
     padding: 1.5rem;
 }
 
-/* --- KLASY DO OBSŁUGI SPA (Ukrywanie/pokazywanie widoków) --- */
+/* ukrywanie widoków spa*/
 .view {
     display: none;
 }

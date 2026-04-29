@@ -1,5 +1,3 @@
-// --- 1. DANE ZAMIAST API (Mock) ---
-// Twoje oferty przeniesione z plików HTML do formatu JSON/Tablicy Obiektów
 const jobsData = [
     {
         id: 1,
@@ -48,7 +46,7 @@ const jobsData = [
     }
 ];
 
-// --- 2. ELEMENTY STRONY (DOM) ---
+//elementy strony
 const views = document.querySelectorAll(".view");
 const jobsContainer = document.getElementById("jobs-container");
 const searchInput = document.getElementById("search");
@@ -56,7 +54,7 @@ const detailsContent = document.getElementById("details-content");
 const applyForm = document.getElementById("apply-form");
 const formMessage = document.getElementById("form-message");
 
-// --- 3. LOGIKA WIDOKÓW (SPA ROUTER) ---
+
 // Funkcja ukrywająca wszystkie sekcje i pokazująca tylko jedną
 function showView(viewId) {
     views.forEach(view => view.classList.remove("active"));
@@ -86,7 +84,7 @@ function handleRouting() {
     }
 }
 
-// --- 4. RENDEROWANIE HTML ---
+
 // Renderowanie listy na stronie głównej + filtrowanie
 function renderJobsList(filterText = "") {
     jobsContainer.innerHTML = ""; // Czyszczenie starych wyników
@@ -147,11 +145,11 @@ function renderJobDetails(jobId) {
     showView("details-view");
 }
 
-// --- 5. EVENT LISTENERS ---
-// Wywołanie routingu po każdej zmianie adresu (kliknięcie linku/przycisku)
+
+// Wywołanie routingu po każdej zmianie adresu kliknięcie linku,przycisku
 window.addEventListener("hashchange", handleRouting);
 
-// Obsługa wyszukiwarki (uruchamia się po każdym wpisanym znaku)
+// Obsługa wyszukiwarki bo uruchamia się po każdym wpisanym znaku
 searchInput.addEventListener("input", (e) => {
     renderJobsList(e.target.value);
 });
@@ -176,7 +174,7 @@ applyForm.addEventListener("submit", (e) => {
         return;
     }
 
-    // Sukces aplikacji
+    // wiadomosc sukcesu
     formMessage.textContent = "Sukces! Aplikacja została wysłana pomyślnie.";
     formMessage.className = "msg-success";
     
@@ -184,6 +182,5 @@ applyForm.addEventListener("submit", (e) => {
     applyForm.reset();
 });
 
-// --- 6. URUCHOMIENIE APLIKACJI ---
 // Generowanie strony przy pierwszym wejściu
 handleRouting();
