@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JobExplorer - Oferty Pracy</title>
+    <title>JobExplorer</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
@@ -12,46 +13,58 @@
             <h1>JobExplorer</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Oferty pracy</a></li>
-
+                    <li><a href="#home">Oferty pracy</a></li>
+                    <li><a href="#apply">Aplikuj</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <h2 style="margin-bottom: 1rem;">Dostępne oferty pracy</h2>
-        
-        <div class="filters">
-            <input type="text" id="search" placeholder="Szukaj stanowiska lub firmy...">
-        </div>
-        
-        <div class="grid-container">
-            <article class="card">
-                <h3>Frontend Developer</h3>
-                <p><strong>Firma:</strong> Tech Corp</p>
-                <p><strong>Lokalizacja:</strong> Warszawa</p>
-                <button onclick="window.location.href='details-frontend.html'">Szczegóły</button>
-            </article>
+        <section id="home-view" class="view active">
+            <h2 style="margin-bottom: 1rem;">Dostępne oferty pracy</h2>
+            <div class="filters">
+                <input type="text" id="search" placeholder="Szukaj stanowiska lub firmy...">
+            </div>
+            <div class="grid-container" id="jobs-container"></div>
+        </section>
 
-            <article class="card">
-                <h3>Backend Developer</h3>
-                <p><strong>Firma:</strong> CodeHouse</p>
-                <p><strong>Lokalizacja:</strong> Kraków</p>
-                <button onclick="window.location.href='details-backend.html'">Szczegóły</button>
-            </article>
+        <section id="details-view" class="view">
+            <div class="details-box" id="details-content"></div>
+        </section>
 
-            <article class="card">
-                <h3>UX/UI Designer</h3>
-                <p><strong>Firma:</strong> DesignerPro</p>
-                <p><strong>Lokalizacja:</strong> Zdalnie</p>
-                <button onclick="window.location.href='details-ux.html'">Szczegóły</button>
-            </article>
-        </div>
+        <section id="apply-view" class="view">
+            <div class="details-box">
+                <h2 style="margin-bottom: 1rem; color: var(--primary-color);">Formularz aplikacyjny</h2>
+                <p style="margin-bottom: 1rem;">Wypełnij poniższe dane, aby wysłać swoje zgłoszenie.</p>
+                
+                <form id="apply-form">
+                    <label for="name">Imię i nazwisko:</label>
+                    <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
+                    
+                    <label for="email">Adres E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="jan@domena.pl" required> 
+                    
+                    <label for="message">Wiadomość / Link do CV (np. LinkedIn, GitHub):</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Napisz kilka słów o sobie..." required></textarea>
+
+                    <button type="submit">Wyślij aplikację</button>
+                    <p id="form-message"></p>
+                </form>
+            </div>
+        </section>
+        
+        <section id="not-found-view" class="view">
+            <div class="details-box">
+                <h2>Błąd 404</h2>
+                <p>Nie znaleziono takiego widoku.</p>
+                <button onclick="window.location.hash='#home'">Wróć na stronę główną</button>
+            </div>
+        </section>
     </main>
 
     <footer>
-            <p>&copy; Projekt zespołowy PS - Wprowadzenie do WWW</p>
+        <p>&copy; Projekt zespołowy PS - Wprowadzenie do WWW</p>
     </footer>
 </body>
 </html>

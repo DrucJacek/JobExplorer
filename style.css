@@ -160,3 +160,16 @@ footer {
     text-align: center;
     padding: 1.5rem;
 }
+
+/* --- KLASY DO OBSŁUGI SPA (Ukrywanie/pokazywanie widoków) --- */
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+
+/* Styl dla komunikatów pod formularzem */
+.msg-success { color: green; margin-top: 10px; font-weight: bold; }
+.msg-error { color: red; margin-top: 10px; font-weight: bold; }
