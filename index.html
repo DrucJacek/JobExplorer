@@ -22,10 +22,14 @@
 
     <main class="container">
         <section id="home-view" class="view active">
-            <h2 style="margin-bottom: 1rem;">Dostępne oferty pracy</h2>
+            <h2>Dostępne oferty pracy</h2>
+
             <div class="filters">
-                <input type="text" id="search" placeholder="Szukaj stanowiska lub firmy...">
+                <input type="text" id="search" placeholder="Szukaj stanowiska, firmy lub miasta...">
+                <button type="button" id="reload-api">Odśwież dane z API</button>
             </div>
+
+            <p id="api-status" class="api-status">Dane lokalne są gotowe. Trwa pobieranie danych z API...</p>
             <div class="grid-container" id="jobs-container"></div>
         </section>
 
@@ -35,16 +39,16 @@
 
         <section id="apply-view" class="view">
             <div class="details-box">
-                <h2 style="margin-bottom: 1rem; color: var(--primary-color);">Formularz aplikacyjny</h2>
-                <p style="margin-bottom: 1rem;">Wypełnij poniższe dane, aby wysłać swoje zgłoszenie.</p>
-                
+                <h2>Formularz aplikacyjny</h2>
+                <p>Wypełnij poniższe dane, aby wysłać swoje zgłoszenie.</p>
+
                 <form id="apply-form">
                     <label for="name">Imię i nazwisko:</label>
                     <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
-                    
+
                     <label for="email">Adres E-mail:</label>
                     <input type="email" id="email" name="email" placeholder="jan@domena.pl" required> 
-                    
+
                     <label for="message">Wiadomość / Link do CV (np. LinkedIn, GitHub):</label>
                     <textarea id="message" name="message" rows="5" placeholder="Napisz kilka słów o sobie..." required></textarea>
 
@@ -53,7 +57,7 @@
                 </form>
             </div>
         </section>
-        
+
         <section id="not-found-view" class="view">
             <div class="details-box">
                 <h2>Błąd 404</h2>
